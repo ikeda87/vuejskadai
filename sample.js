@@ -11,4 +11,19 @@ new Vue({
       { id: 3, name: '山田一郎', course: '機械学習コース', acceptancePeriod: '2021年01月期' }
     ]
   },
+  methods: {
+    addStudent: function() {
+      this.defaultLastId += 1;
+      var hash = {
+        id: this.defaultLastId,
+        name: this.name,
+        course: this.course,
+        acceptancePeriod: this.acceptancePeriod
+      };
+      this.students.push(hash);
+      this.name = ""
+      this.course = ""
+      this.acceptancePeriod = ""
+    }
+  }
 })
